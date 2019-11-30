@@ -9,6 +9,9 @@ import { ReservasComponent } from './reservas/reservas.component';
 import { CuartosComponent } from './reservas/cuartos/cuartos.component';
 import { HomeComponent } from './home/home.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { AuthComponent } from './auth/auth.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { UsuarioComponent } from './usuario/usuario.component';
     ReservasComponent,
     CuartosComponent,
     HomeComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    AuthComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
