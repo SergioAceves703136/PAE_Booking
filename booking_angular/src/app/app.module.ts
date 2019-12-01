@@ -9,6 +9,13 @@ import { ReservasComponent } from './reservas/reservas.component';
 import { CuartosComponent } from './reservas/cuartos/cuartos.component';
 import { HomeComponent } from './home/home.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { AuthComponent } from './auth/auth.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { HeaderComponent } from './nav/header/header.component';
+import { SidenavListComponent } from './nav/sidenav-list/sidenav-list.component';
+import { TabsComponent } from './nav/tabs/tabs.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -16,13 +23,20 @@ import { UsuarioComponent } from './usuario/usuario.component';
     ReservasComponent,
     CuartosComponent,
     HomeComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    AuthComponent,
+    SignupComponent,
+    SigninComponent,
+    HeaderComponent,
+    SidenavListComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
