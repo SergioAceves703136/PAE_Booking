@@ -12,6 +12,10 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { AuthComponent } from './auth/auth.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import { HeaderComponent } from './nav/header/header.component';
+import { SidenavListComponent } from './nav/sidenav-list/sidenav-list.component';
+import { TabsComponent } from './nav/tabs/tabs.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -22,13 +26,17 @@ import { SigninComponent } from './auth/signin/signin.component';
     UsuarioComponent,
     AuthComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    HeaderComponent,
+    SidenavListComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
