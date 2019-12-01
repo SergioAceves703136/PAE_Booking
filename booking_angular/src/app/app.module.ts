@@ -16,6 +16,7 @@ import { HeaderComponent } from './nav/header/header.component';
 import { SidenavListComponent } from './nav/sidenav-list/sidenav-list.component';
 import { TabsComponent } from './nav/tabs/tabs.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SigninComponent,
     HeaderComponent,
     SidenavListComponent,
-    TabsComponent
+    TabsComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,

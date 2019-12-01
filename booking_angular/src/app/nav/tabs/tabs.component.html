@@ -1,16 +1,45 @@
-<nav mat-tab-nav-bar>
+<nav mat-tab-nav-bar fxFlex fxFlexLayout fxLayoutAlign="center center">
     
-<span class="toolbar-flex"></span>
-<mat-tab-group>
 
+
+        <span class=toolbar-flex></span>
+    <a mat-tab-link
+    routerLink="/"
+    routerLinkActive #home="routerLinkActive"
+    [active]="home.isActive">
+    Home
+    </a>
+
+    <a mat-tab-link
+    routerLink="/reservas"
+    routerLinkActive #cuartos="routerLinkActive"
+    [active]="cuartos.isActive">
+    Cuartos
+    </a>
+
+    <a mat-tab-link
+    routerLink="/reservas"
+    routerLinkActive #servicios="routerLinkActive"
+    [active]="servicios.isActive">
+    Servicios
+    </a>
+
+    <a mat-tab-link
+    routerLink="/aboutus"
+    routerLinkActive #aboutus="routerLinkActive"
+    [active]="aboutus.isActive">
+    About Us
+    </a>
+
+    <a mat-tab-link
+    routerLink="usuario"
+    routerLinkActive #usuario="routerLinkActive"
+    [active]="usuario.isActive">
+    Usuario
+    </a>
     
-    <mat-tab label="Home"></mat-tab>
-    <mat-tab label="Cuartos"></mat-tab>
-    <mat-tab label="Servicios"></mat-tab>
-    <mat-tab label="About Us"></mat-tab>
-    <mat-tab label="Usuario" ng-disabled> </mat-tab>
+<span class=toolbar-flex></span>
 
-</mat-tab-group>
-<span class="toolbar-flex"></span>
+
 
 </nav>
