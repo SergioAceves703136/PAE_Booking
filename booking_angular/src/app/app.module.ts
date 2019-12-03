@@ -17,6 +17,7 @@ import { SidenavListComponent } from './nav/sidenav-list/sidenav-list.component'
 import { TabsComponent } from './nav/tabs/tabs.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

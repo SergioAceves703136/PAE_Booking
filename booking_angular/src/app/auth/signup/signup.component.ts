@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit {
     password:"",
     address:"",
     city:"",
+    country:"",
     postalcode:"",
     cellphone:"",
     birthday:"",
@@ -30,7 +31,7 @@ export class SignupComponent implements OnInit {
     console.log('Se creo ');
     
   }
-  addUser(events?){
+  addPerson(events?){
     if(!this.persona)return;
     this.singupService.createPerson(this.persona);
   }

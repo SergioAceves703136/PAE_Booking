@@ -7,6 +7,7 @@ export class Person {
         password:string,
         address:string,
         city:string,
+        country:string,
         postalcode:number,
         cellphone:number,
         birthday:string,

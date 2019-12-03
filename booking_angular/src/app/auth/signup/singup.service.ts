@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Person } from '../../data-models/person';
-import { HttpClient } from '@angular/common/http';
 
+var incrementID = 0;
 @Injectable({
   providedIn: 'root'
 })
-var incrementID = 0;
+
 export class SingupService {
   persons:Array<Person>=[
     {
-      id: this.generateID(),
+      id: '',
       fullName:'',
       email:'',
       screenName:'',
       password:'',
       address:'',
       city:'',
+      country:'',
       postalcode:'',
       cellphone:'',
       birthday:'',
@@ -24,12 +25,13 @@ export class SingupService {
       transacciones:'',
   }
   ];
-  constructor(private httpClient:HttpClient) { }
+  constructor() { }
   generateID(){
     incrementID++;
     return incrementID;
   }
   createPerson(objct){
+    objct.id = this.generateID();
     console.log(objct);
     this.savePerson(objct);
     this.persons.push(objct);
