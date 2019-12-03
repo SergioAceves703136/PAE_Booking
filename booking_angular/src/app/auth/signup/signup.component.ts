@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Person } from '../../data-models/person';
+import { SingupService } from "./singup.service";
 
 @Component({
   selector: 'app-signup',
@@ -6,10 +8,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-  constructor() { }
+  persons:Array<any> = [];
+  persona:Person = {
+    id:"",
+    fullName:"",
+    email:"",
+    screenName:"",
+    password:"",
+    address:"",
+    city:"",
+    postalcode:"",
+    cellphone:"",
+    birthday:"",
+    rol:"",
+    cuartosCreados:"",
+    transacciones:"",
+  }
+  constructor(private singupService:SingupService ) { }
 
   ngOnInit() {
+    console.log('Se creo ');
+    
+  }
+  addUser(events?){
+    if(!this.persona)return;
+    this.singupService.createPerson(this.persona);
   }
 
 }
+   
