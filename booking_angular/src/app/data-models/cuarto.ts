@@ -19,3 +19,4 @@ export class Cuarto {
         public precioDia: number
     ) { }
 }
+
