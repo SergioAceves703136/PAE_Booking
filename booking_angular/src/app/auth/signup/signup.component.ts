@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Person } from '../../data-models/person';
 import { SingupService } from "./singup.service";
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -25,10 +26,10 @@ export class SignupComponent implements OnInit {
     cuartosCreados:"",
     transacciones:"",
   }
-  constructor(private singupService:SingupService ) { }
+  constructor(private singupService:SingupService) { }
 
   ngOnInit() {
-    console.log('Se creo ');
+
     
   }
   addPerson(events?){
