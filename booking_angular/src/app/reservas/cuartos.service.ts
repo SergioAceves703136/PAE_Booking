@@ -111,7 +111,7 @@ addCuarto(cuarto: Cuarto): boolean {
 }
 
 editarCuarto(cuarto: Cuarto): boolean {
-const pos = this.listaCuarto.findIndex(p => p.id === p.id);
+const pos = this.listaCuarto.findIndex(p => p.id === cuarto.id);
 if (pos >= 0 ) {
   Object.assign(this.listaCuarto[pos], cuarto);
   this.notificarCambio();
