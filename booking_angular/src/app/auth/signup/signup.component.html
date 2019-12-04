@@ -1,1 +1,118 @@
-<p>signup works!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="page">
+        <div class="upper">
+            <h2>Ingresa tus datos</h2>
+        </div>
+        <div class="lower">
+            <div class="fit">
+            </div>
+            <form (submit)="addPerson($event)">
+                <div class="centro">
+                    <div class="form-group row">
+                        <label for="inputFullName" class="col-sm-2 col-form-label">Nombre completo</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="persona" [(ngModel)]="persona.fullname"
+                                placeholder='Name'>
+                            <!--input type="text" class="form-control" id="inputFullName"    placeholder="Nombre completo"-->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputMail" class="col-sm-2 col-form-label">Correo</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="persona" [(ngModel)]="persona.email"
+                                placeholder='email'>
+                            <!--input type="email" class="form-control" id="inputMail" placeholder="Correo"-->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputUserName" class="col-sm-2 col-form-label">Nombre de Usuario</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="persona" [(ngModel)]="persona.screenName"
+                                placeholder='Nombre de Usuario'>
+                            <!--input type="text" class="form-control" id="inputUserName" placeholder="Nombre de Usuario"-->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="persona" [(ngModel)]="persona.password"
+                                placeholder='Contraseña'>
+                            <!--input type="password" class="form-control" id="inputPassword" placeholder="Contraseña"-->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputAddress" class="col-sm-2 col-form-label">Dirección</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="persona" [(ngModel)]="persona.address"
+                                placeholder='Dirección'>
+                            <!--input type="text" class="form-control" id="inputAddress" placeholder="Dirección"-->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputCity" class="col-sm-2 col-form-label">Ciudad</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="persona" [(ngModel)]="persona.city"
+                                placeholder='Ciudad'>
+                            <!--input type="text" class="form-control" id="inputCity" placeholder="Ciudad"-->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputCountry" class="col-sm-2 col-form-label">País</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="persona" [(ngModel)]="persona.country"
+                                placeholder='País'>
+                            <!--input type="text" class="form-control" id="inputCountry" placeholder="País"-->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputZip" class="col-sm-2 col-form-label">Código Postal</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="persona" [(ngModel)]="persona.postalcode"
+                                placeholder='Código postal'>
+                            <!--input type="number" class="form-control" id="inputZip" placeholder="Código postal"-->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputCellphone" class="col-sm-2 col-form-label">Telefono</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="persona" [(ngModel)]="persona.cellphone"
+                                placeholder='Telefono'>
+                            <!--input type="number" class="form-control" id="inputCellphone" placeholder="Telefono"-->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputBirthDate" class="col-sm-2 col-form-label">Fecha de nacimiento</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" name="persona" [(ngModel)]="persona.birthday"
+                                placeholder='Fecha de nacimiento'>
+                            <!--input type="date" class="form-control" id="inputBirthDate" placeholder="Fecha de nacimiento"-->
+                        </div>
+                    </div>
+                    <button>Create</button>
+                    <!--input type="submit" value="Listo" class="btn float-right login_btn"-->
+                </div>
+            </form>
+            <div class="fit">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
