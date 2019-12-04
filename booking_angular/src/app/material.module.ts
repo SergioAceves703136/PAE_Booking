@@ -7,7 +7,10 @@ import {
     MatSidenavModule,
     MatTabsModule,
     MatGridListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatPaginatorModule,
+    MatCardModule,
+    MatDialogModule
 
 } from '@angular/material';
 
@@ -22,7 +25,10 @@ import {
         MatListModule,
         MatTabsModule,
         MatGridListModule,
-        MatDividerModule
+        MatDividerModule,
+        MatPaginatorModule,
+        MatCardModule,
+        MatDialogModule
     ],
     exports: [
         MatButtonModule,
@@ -32,7 +38,10 @@ import {
         MatListModule,
         MatTabsModule,
         MatGridListModule,
-        MatDividerModule
+        MatDividerModule,
+        MatPaginatorModule,
+        MatCardModule,
+        MatDialogModule
     ]
 
 })
