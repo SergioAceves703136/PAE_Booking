@@ -20,7 +20,6 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { FormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-
 @NgModule({
   declarations: [
     AppComponent,
