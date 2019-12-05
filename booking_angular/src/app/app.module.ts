@@ -19,7 +19,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-
 @NgModule({
   declarations: [
     AppComponent,

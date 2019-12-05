@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -160,4 +161,168 @@
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Creacion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .btn-circle.btn-xl {
+            width: 70px;
+            height: 70px;
+            padding: 10px 16px;
+            border-radius: 35px;
+            font-size: 24px;
+            line-height: 1.33;
+        }
+
+        .btn-circle {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.42857;
+        }
+
+        .btn-circle {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.42857;
+        }
+
+        .modal-body {
+            max-height: calc(100vh - 210px);
+            overflow-y: auto;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!--Cuadro para saber información-->
+    <div class="modal fade show" id="infoId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        data-action="new" style="display:block;" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">información</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="container-fluid">
+                        <form id="altaCuarto" onsubmit="return false">
+                            <div class="form-group">
+                                <label for="">Descripción</label>
+                                <textarea class="form-control" name="Text1" cols="40" rows="4" name="" id=""
+                                    placeholder="Describe tu oferta" required=""></textarea>
+                            </div>
+
+                            <P>Sube una imagen representativa</P>
+                            <div class="form-group">
+                                <input type="file" class="form-control " min=0 name="" id="" aria-describedby="fileId"
+                                    placeholder="" required="">
+                            </div>
+                            <div id="recamaras">
+                                <h5>Número de recamaras</h5>
+                                <div class="form-group">
+
+                                    <input type="number" class="form-control " min="0" name="" id="" aria-describedby="helpId"
+                                        placeholder="" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Descripción de los cuartos</label>
+                                    <textarea class="form-control" name="Text2" multiple cols="40" rows="4" name=""
+                                        id="" placeholder="Describe los cuartos" required=""></textarea>
+                                </div>
+                                <P>Aqui puedes subir imagenes de los cuartos</P>
+                                <div class="form-group">
+                                    <input type="file" name="imgCuartos" multiple>
+                                </div>
+                            </div>
+                            <div id="bano">
+                                <h5>Número de baños</h5>
+                                <div class="form-group">
+                                    <input type="number" class="form-control " min="0" name="" id="" aria-describedby=""
+                                        placeholder="" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Descripción de los Baños</label>
+                                    <textarea class="form-control" name="Text3" multiple cols="40" rows="4" name=""
+                                        id="" placeholder="Describe los Baños" required=""></textarea>
+                                </div>
+                                <P>Aqui puedes subir imagenes de los Baños</P>
+                                <div class="form-group">
+                                    <input type="file" name="imgBa" multiple>
+                                </div>
+
+                            </div>
+                            <div id="cocina">
+                                <h5>Cocina</h5>
+
+                                <div class="form-group">
+                                    <label for="">Descripción de la cocina</label>
+                                    <textarea class="form-control" name="Text2" multiple cols="40" rows="4" name=""
+                                        id="" placeholder="Describe la Cocina" required=""></textarea>
+                                </div>
+                                <P>Aqui puedes subir imagenes de la Cocina</P>
+                                <div class="form-group">
+                                    <input type="file" name="imgCocina" multiple>
+                                </div>
+
+                            </div>
+                            <div id="extras">
+                                <h5>Otros Detalles</h5>
+                                <div class="form-group">
+                                    <label for="" class="float-left">Agrega Detalles extras</label>
+                                    <button type="button"
+                                        class="btn btn-success mr-2 ml-2 float-left btn-circle">+</button>
+                                    <button type="button"
+                                        class="btn btn-danger mr-2 ml-2 float-left btn-circle">-</button>
+                                    <input type="txt" class="form-control " name="" id="bonus" aria-describedby="helpId"
+                                        placeholder="Internet / Vista al Mar / etc" >
+
+                                </div>
+                                <P>Aqui puedes subir imagenes extras</P>
+                                <div class="form-group">
+                                        <input type="file" name="imgExtra" multiple>
+                                   </div>
+                            </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary save">Save</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+</body>
+
+>>>>>>> 80f9054bed7429be7f5ecf20e89753de9f3b8b00
 </html>

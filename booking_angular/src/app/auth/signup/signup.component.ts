@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../../data-models/person';
-import { SingupService } from "./singup.service";
-
+import { SingupService } from './singup.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -9,10 +9,11 @@ import { SingupService } from "./singup.service";
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  persons:Array<any> = [];
-  persona:Person = {
+
+  persons: Array<any> = [];
+  persona: Person = {
     id:"",
-    fullName:"",
+    fullname:"",
     email:"",
     screenName:"",
     password:"",
@@ -26,16 +27,18 @@ export class SignupComponent implements OnInit {
     cuartosCreados:"",
     transacciones:"",
   }
-  constructor(private singupService:SingupService) { }
+
+  constructor(private singupService: SingupService,
+              private router: Router ) { }
 
   ngOnInit() {
-
+    console.log('Se creo ');
     
   }
-  addPerson(events?){
-    if(!this.persona)return;
+  addPerson(events?) {
+    if(!this.persona) return;
     this.singupService.createPerson(this.persona);
+    this.router.navigate(['./signin']);
   }
 
 }
-   

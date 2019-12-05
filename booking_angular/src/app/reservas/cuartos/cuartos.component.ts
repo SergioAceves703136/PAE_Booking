@@ -10,7 +10,6 @@ export interface DialogData {
   cuartoModal: Cuarto;
 }
 
-
 @Component({
   selector: 'app-cuartos',
   templateUrl: './cuartos.component.html',
@@ -69,6 +68,4 @@ export class CuartosInfoComponent {
   }
 
 }
-
-
 
