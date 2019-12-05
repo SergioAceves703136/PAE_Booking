@@ -1,0 +1,112 @@
+<div>
+    <div mat-dialog-title>
+        <h5>Crear {{data.nombre}}</h5>
+    </div>
+    <div mat-dialog-content>
+
+        <div class="container-fluid">
+            <div mat-form-field>
+                <label for="">Nombre de la reserva</label>
+                <textarea matInput name="Text1" cols="40" rows="4" name="" id="" placeholder="Casa Hermosa en la playa"
+                    required="" [(ngModel)]="data.nombre"></textarea>
+            </div>
+
+
+            <div mat-form-field>
+                <label for="">Descripción</label>
+                <textarea matInput name="Text1" cols="40" rows="4" name="" id="" placeholder="Describe tu oferta"
+                    required="" [(ngModel)]="data.descripcion"></textarea>
+            </div>
+            <div mat-form-field>
+                    <label for="">Direccion</label>
+                    <textarea matInput name="Text1" cols="40" rows="4" name="" id="" placeholder="Av Siempre Viva 656"
+                        required="" [(ngModel)]="data.direccion"></textarea>
+                </div>
+
+            <P>Sube una imagen representativa</P>
+            <div mat-form-field>
+                <input type="text" matInput [(ngModel)]="data.imagen1" name="" id="" aria-describedby="fileId"
+                    placeholder="" required="">
+            </div>
+            <div id="recamaras">
+                <h5>Número de recamaras</h5>
+                <div mat-form-field>
+
+                    <input matInput type="number" [(ngModel)]="data.numCuartos" min="0" name="" id=""
+                        aria-describedby="helpId" placeholder="" required="">
+                </div>
+                <div mat-form-field>
+                    <label for="">Descripción de los cuartos</label>
+                    <textarea matInput [(ngModel)]="data.descCuartos" name="Text2" multiple cols="40" rows="4" name=""
+                        id="" placeholder="Describe los cuartos" required=""></textarea>
+                </div>
+                <P>Aqui puedes subir imagenes de los cuartos</P>
+                <div mat-form-field>
+                    <input type="text" name="imgCuartos" matInput [(ngModel)]="data.imagenCuartos" multiple>
+                </div>
+            </div>
+            <div id="bano">
+                <h5>Número de baños</h5>
+                <div mat-form-field>
+                    <input type="number" matInput min="0" name="" matInput [(ngModel)]="data.numBaths" id=""
+                        aria-describedby="" placeholder="" required="">
+                </div>
+                <div mat-form-field>
+                    <label for="">Descripción de los Baños</label>
+                    <textarea matInput [(ngModel)]="data.descBaths" name="Text3" multiple cols="40" rows="4" name=""
+                        id="" placeholder="Describe los Baños" required=""></textarea>
+                </div>
+                <P>Aqui puedes subir imagenes de los Baños</P>
+                <div mat-form-field>
+                    <input type="text" matInput [(ngModel)]="data.imagenBaths" name="imgBa" multiple>
+                </div>
+
+            </div>
+            <div id="cocina">
+                <h5>Cocina</h5>
+
+                <div mat-form-field>
+                    <label for="">Descripción de la cocina</label>
+                    <textarea matInput [(ngModel)]="data.descCocina" name="Text2" multiple cols="40" rows="4" name=""
+                        id="" placeholder="Describe la Cocina" required=""></textarea>
+                </div>
+                <P>Aqui puedes subir imagenes de la Cocina</P>
+                <div mat-form-field>
+                    <input type="text" name="imgCocina" matInput [(ngModel)]="data.imagenCocina">
+                </div>
+
+            </div>
+            <div id="extras">
+                <h5>Otros Detalles</h5>
+                <div mat-form-field>
+                    <label for="" class="float-left">Agrega Detalles extras</label>
+                    <textarea matInput name="Textextr" matInput [(ngModel)]="data.extras" cols="40" rows="4" name=""
+                        id="" placeholder="Extras" required="" [(ngModel)]="data.extras"></textarea>
+
+                </div>
+                <P>Aqui puedes subir imagenes extras</P>
+                <div mat-form-field>
+                    <input type="text" name="imgExtra" matInput [(ngModel)]="data.imagenExtras">
+                </div>
+            </div>
+
+            <div id="dinero">
+                <h5>Precio</h5>
+                <P>Precio por noche</P>
+                <div mat-form-field>
+                    <input type="number" name="precio" matInput [(ngModel)]="data.precioDia">
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div mat-dialog-actions>
+        <button type="button" class="btn btn-secondary" (click)=onClosed() data-dismiss="modal">Close</button>
+        <button matButton class="btn btn-primary save" (click)=onNoClick()>Save</button>
+    </div>
+
+
+</div>

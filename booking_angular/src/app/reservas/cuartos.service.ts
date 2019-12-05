@@ -106,6 +106,7 @@ addCuarto(cuarto: Cuarto): boolean {
   cuarto.id = this.getNextID();
   this.listaCuarto.push(Object.assign({}, cuarto));
   this.notificarCambio();
+  console.log("SE CREO EL CUARTO");
   return true;
 
 }
