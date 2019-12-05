@@ -18,7 +18,7 @@ export class SingupService {
   persons: Person[] = [
      new Person(1, 'admin', 'test@booking.com', 'admin',
       'admin', 'Elm Street 666', 'New Orleans', 'EEUU',
-      1111, 13579, '01-01-2000', 1)
+      1111, 13579, '01-01-2000', 1, [], [])
   ];
 
 
@@ -82,6 +82,23 @@ export class SingupService {
   getPersons(): Array<Person> {
     console.log(this.persons);
     return this.persons.slice();
+  }
+
+  notificarCambio() {
+    this.cambiaDato.next(this.persons.slice());
+  }
+
+  addReservation(idPer: number, idCuarto: number): boolean {
+    const pos = this.persons.findIndex(i => i.id === idPer);
+    if (pos >= 0){
+      this.persons[pos].transacciones.push(idCuarto);
+      this.notificarCambio();
+      console.log("Reservación aceptada");
+      return true;
+    }
+
+    return false;
+
   }
   /*
     getLastId(): number {

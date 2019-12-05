@@ -110,7 +110,7 @@ export class ReservaCuartoComponent {
 
     this.persona = this.singupService.getCurrentPerson();
     console.log(this.persona);
-   
+
   }
 
   onNoClick() {
@@ -123,6 +123,9 @@ export class ReservaCuartoComponent {
     console.log(this.cuartoRes);
     this.cuartoRes = this.data.cuartoModal;
     console.log("Reservaste: ", this.cuartoRes.nombre);
+    this.singupService.addReservation(this.persona.id, this.cuartoRes.id);
+
+
   }
 
 
