@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,4 +115,122 @@
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Planes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .btn-circle.btn-xl {
+            width: 70px;
+            height: 70px;
+            padding: 10px 16px;
+            border-radius: 35px;
+            font-size: 24px;
+            line-height: 1.33;
+        }
+
+        .btn-circle {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.42857;
+        }
+
+        .btn-circle {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.42857;
+        }
+
+        .modal-body {
+            max-height: calc(100vh - 210px);
+            overflow-y: auto;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!--Cuadro para Reservar -->
+    <div class="modal fade show" id="editId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        aria-hidden="false" data-action="new" style="display: block">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reservar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form id="altaBooking" onsubmit="return false">
+                            <h2 for="">Reservacion para (Nombre)</h2>
+                            <div class="form-group">
+                                <label>Elige fecha de llegada</label>
+                                <input type="date" class="form-control llegada" name="" id="llegadaid"
+                                    aria-describedby="helpId" placeholder="" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Elige fecha de Salida</label>
+                                <input type="date" class="form-control llegada" name="" id="salidaid"
+                                    aria-describedby="helpId" placeholder="" required="">
+                            </div>
+
+                            <div>
+                                <h5>Número de personas</h5>
+                                <div class="form-group">
+                                    <input type="number" class="form-control " min=1 max=10 name="" id=""
+                                        aria-describedby="helpId" placeholder="1" required="">
+                                </div>
+                               
+
+                            </div>
+                            <h5 id="total"> Precio total: 25,000</h5>
+                            <div class="form-group">
+                                <label>Correo</label>
+                                <input type="email" class="form-control email" name="" id="emailid"
+                                    aria-describedby="helpId" placeholder="correo@dominio.com" required="">
+                            </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary save">Reserva!</button>
+                    <button type="submit" style="display: none" class="btn btn-danger delete">Delete</button>
+                </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+>>>>>>> 80f9054bed7429be7f5ecf20e89753de9f3b8b00
 </html>

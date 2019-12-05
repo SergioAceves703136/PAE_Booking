@@ -3,6 +3,8 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css"/>
 </head>
 
 <body>
@@ -22,9 +24,10 @@
                                     </div>
                                 </div>
                                 <div class="userData ml-3">
-                                    <h2 class="d-block" name="persona" style="font-size: 1.5rem; font-weight: bold">{{persona.screenName}}</h2> <!--[(ngModel)]="persona.screenName"-->
-                                    <!--<h6 class="d-block" name="persona" *ngIf="!`${persona.rol}`" >"Admin"</h6> [(ngModel)]="persona.rol"-->
-                                    <!--<h6 class="d-block" name="persona" *ngIf="`${persona.rol}`" >"User"</h6> [(ngModel)]="persona.rol"-->
+                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">{Nombre de usuario}</h2>
+                                    <h6 class="d-block">{Edad} años</h6>
+                                    <h6 class="d-block">{Rango de usuario}</h6>
+                                    <h6 class="d-block">{Género}</h6>
                                 </div>
                                 <div class="ml-auto">
                                     <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
@@ -50,8 +53,8 @@
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">Full Name</label>
                                             </div>
-                                            <div class="col-md-8 col-6" ><!--[(ngModel)]="persona.fullName"-->
-                                                {{persona.fullname}}
+                                            <div class="col-md-8 col-6">
+                                                Jamshaid Kamran
                                             </div>
                                         </div>
                                         <hr />
@@ -60,8 +63,8 @@
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">Birth Date</label>
                                             </div>
-                                            <div class="col-md-8 col-6"><!-- [(ngModel)]="persona.birthday">-->
-                                                {{persona.birthday}}
+                                            <div class="col-md-8 col-6">
+                                                March 22, 1994.
                                             </div>
                                         </div>
                                         <hr />
@@ -71,8 +74,8 @@
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">País</label>
                                             </div>
-                                            <div class="col-md-8 col-6"> <!--[(ngModel)]="persona.country">-->
-                                                {{persona.country}}
+                                            <div class="col-md-8 col-6">
+                                                México
                                             </div>
                                         </div>
                                         <hr />
@@ -80,17 +83,17 @@
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">Ciudad</label>
                                             </div>
-                                            <div class="col-md-8 col-6"> <!--[(ngModel)]="persona.city">-->
-                                                {{persona.city}}
+                                            <div class="col-md-8 col-6">
+                                                Guadalajara
                                             </div>
                                         </div>
                                         <hr />
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Email</label>
+                                                <label style="font-weight:bold;">Something</label>
                                             </div>
-                                            <div class="col-md-8 col-6"> <!-- [(ngModel)]="persona.email" -->
-                                                {{persona.email}}
+                                            <div class="col-md-8 col-6">
+                                                Something
                                             </div>
                                         </div>
                                         <hr />
