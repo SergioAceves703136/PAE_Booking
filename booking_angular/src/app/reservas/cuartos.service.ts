@@ -121,5 +121,28 @@ if (pos >= 0 ) {
 return false;
 }
 
+RoomService(): Cuarto {
+  const cuartoR: Cuarto = {
+    id: 0,
+    owner: 0,
+   direccion: '',
+    nombre: '',
+         descripcion: '',
+         imagen1: '',
+         numCuartos: 0,
+         descCuartos: '',
+         imagenCuartos: '',
+         numBaths: 0,
+         descBaths: '',
+         imagenBaths: '',
+         descCocina: '',
+         imagenCocina: '',
+         extras: '',
+         imagenExtras: '',
+         precioDia: 0
+  };
+  return cuartoR;
+  }
+
 
 }

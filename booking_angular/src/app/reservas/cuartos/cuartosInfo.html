@@ -50,5 +50,6 @@
 
 <div style="text-align: end;" mat-dialog-actions style="background-color: beige;">
     <button  mat-button (click)=onNoClick()>Ok</button>
+    <button *ngIf="this.singupService.isLoggedIn()"  mat-button (click)=onClickRes(data.cuartoModal.id)>Reservar</button>
 </div>
 </div>

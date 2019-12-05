@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ReservasComponent } from './reservas/reservas.component';
-import { CuartosComponent, CuartosInfoComponent } from './reservas/cuartos/cuartos.component';
+import { CuartosComponent, CuartosInfoComponent, ReservaCuartoComponent } from './reservas/cuartos/cuartos.component';
 import { HomeComponent } from './home/home.component';
 import { UsuarioComponent, CrearCuartosComponent } from './usuario/usuario.component';
 import { AuthComponent } from './auth/auth.component';
@@ -34,7 +34,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     TabsComponent,
     AboutusComponent,
     CuartosInfoComponent,
-    CrearCuartosComponent
+    CrearCuartosComponent,
+    ReservaCuartoComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
@@ -46,7 +47,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     FormsModule,
     ReactiveFormsModule
   ],
-  entryComponents: [CuartosInfoComponent, CrearCuartosComponent ],
+  entryComponents: [CuartosInfoComponent, CrearCuartosComponent, ReservaCuartoComponent ],
   providers: [
     FormsModule
   ],
