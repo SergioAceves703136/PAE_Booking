@@ -36,8 +36,9 @@ export class SingupService {
     const pos = this.persons.findIndex(i=> i.screenName === objct.screenName);
     if(pos>=0 && this.persons[pos].password==objct.password){
       console.log('entro');
-      
+
       this.router.navigate(['/usuario']);
+      return;
     }
     console.log('Error');
     
