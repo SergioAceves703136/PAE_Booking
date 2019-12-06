@@ -90,10 +90,10 @@ export class SingupService {
 
   addReservation(idPer: number, idCuarto: number): boolean {
     const pos = this.persons.findIndex(i => i.id === idPer);
-    if (pos >= 0){
+    if (pos >= 0) {
       this.persons[pos].transacciones.push(idCuarto);
       this.notificarCambio();
-      console.log("Reservación aceptada");
+      console.log('Reservación aceptada');
       return true;
     }
 
