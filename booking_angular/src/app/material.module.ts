@@ -10,7 +10,9 @@ import {
     MatDividerModule,
     MatPaginatorModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule
 
 } from '@angular/material';
 
@@ -27,7 +29,9 @@ import {
         MatDividerModule,
         MatPaginatorModule,
         MatCardModule,
-        MatDialogModule
+        MatDialogModule,
+        MatInputModule,
+        MatFormFieldModule
     ],
     exports: [
         MatButtonModule,
@@ -40,7 +44,9 @@ import {
         MatDividerModule,
         MatPaginatorModule,
         MatCardModule,
-        MatDialogModule
+        MatDialogModule,
+        MatInputModule,
+        MatFormFieldModule
     ]
 
 })

@@ -1,18 +1,18 @@
 export class Person {
     constructor(
-        id: number,
-        fullname: string,
-        email: string,
-        screenName: string,
-        password: string,
-        address: string,
-        city: string,
-        country: string,
-        postalcode: number,
-        cellphone: number,
-        birthday: string,
-        rol: number,    // admin: 0, usuario: 1
-        cuartosCreados?: number[],
-        transacciones?: number[],
+       public id: number,
+       public fullname: string,
+       public email: string,
+       public screenName: string,
+       public password: string,
+       public address: string,
+       public city: string,
+       public country: string,
+       public postalcode: number,
+       public cellphone: number,
+       public birthday: string,
+       public rol: number,    // admin: 0, usuario: 1
+       public cuartosCreados?: number[],
+       public transacciones?: number[],
     ) { }
 }

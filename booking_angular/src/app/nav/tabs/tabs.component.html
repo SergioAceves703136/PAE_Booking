@@ -18,7 +18,7 @@
     </a>
 
     <a mat-tab-link
-    routerLink="/reservas"
+    
     routerLinkActive #servicios="routerLinkActive"
     >
     Servicios
@@ -31,7 +31,9 @@
     About Us
     </a>
 
-    <a mat-tab-link
+    <a 
+    *ngIf="this.singupService.isLoggedIn()"
+    mat-tab-link
     routerLink="usuario"
     routerLinkActive #usuario="routerLinkActive"
     [active]="usuario.isActive">

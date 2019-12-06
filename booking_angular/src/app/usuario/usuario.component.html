@@ -18,6 +18,7 @@
                                     <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                     <div class="middle">
                                         <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
+                                        <input type="button" class="btn btn-primary" id="btnCreate" value="Crear Cuarto" (click)="crear()" />
                                         <input type="file" style="display: none;" id="profilePicture" name="file" />
                                     </div>
                                 </div>
@@ -34,14 +35,19 @@
     
                         <div class="row">
                             <div class="col-12">
+
                                 <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Sobre mí</a>
+                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" role="tab" aria-controls="basicInfo" aria-selected="true">Sobre mí</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Servicios que ofrezco</a>
+                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab"  role="tab" aria-controls="connectedServices" aria-selected="false">Servicios que ofrezco</a>
+                                    </li>
+                                    <li class="nav-item">
+                                            <a class="nav-link" id="connectedServices-tab" data-toggle="tab"  role="tab"  aria-selected="false">Servicios reservados</a>
                                     </li>
                                 </ul>
+
                                 <div class="tab-content ml-1" id="myTabContent">
                                     <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
                                         
@@ -96,32 +102,7 @@
                                         <hr />
     
                                     </div>
-                                    <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
-                                        <div class="d-flex justify-content-start">
-                                            <div class="image-container">
-                                                <img src="http://placehold.it/150x150" id="imgService" style="width: 150px; height: 150px" class="img-thumbnail" />
-                                            </div>
-                                            <div class="userData ml-3">
-                                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">Casa en la playa</h2>
-                                                <h6 class="d-block">Calle coco #36</h6>
-                                                <h6 class="d-block">Manzanillo, Colima, México</h6>
-                                                <h6 class="d-block">C.P. 23000</h6>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div class="d-flex justify-content-start">
-                                            <div class="image-container">
-                                                <img src="http://placehold.it/150x150" id="imgService1" style="width: 150px; height: 150px" class="img-thumbnail" />
-                                            </div>
-                                            <div class="userData ml-3">
-                                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">Casa en el bosque</h2>
-                                                <h6 class="d-block">Brecha #175</h6>
-                                                <h6 class="d-block">Arteaga, Coahuila, México</h6>
-                                                <h6 class="d-block">C.P. 63000</h6>
-                                            </div>
-                                        </div>
-                                        <input type="submit" value="Agregar servicio" class="btn float-right addservice_btn">
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>    
