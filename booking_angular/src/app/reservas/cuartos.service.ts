@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { Cuarto } from '../data-models/cuarto';
+import {HttpClient} from '@angular/common/http';
 
 
 
@@ -47,36 +48,19 @@ export class CuartosService {
         'https://sizearquitectura.es/wp-content/uploads/2019/02/cocina-casa-de-lujo-ibiza.jpg',
         'Jardin y Terraza con asador',
         'https://www.mundodeportivo.com/r/GODO/MD/p6/MasQueDeporte/Imagenes/2019/04/24/Recortada/img_ironda_20190424-161008_imagenes_md_otras_fuentes_cinema-k0uB-U461841974404xGG-980x554@MundoDeportivo-Web.jpg'
-  , 900 ),
-      new Cuarto(3,
-        2,
-        'Glorieta Colon, Guadalajara, 56410',
-        'Departamento con vista a catedral',
-        'Departamento cerca de punto sao paulo en guadalajara con vista al centro de la ciudad',
-        'https://guias-viajar.com/wp-content/uploads/2014/04/mejores-fotos-valencia004.jpg',
-        2,
-        '2 Cuartos con balcon y camas individuales',
-        'https://www.freejpg.com.ar/asset/OLD/comps/f003992.jpg',
-        2,
-        '2 Baños completos en cada habitación, cuentan con bidet',
-        'https://tendenzias.com/wp-content/uploads/fotos-de-ba%C3%B1os-de-lujo-600x476.jpg',
-        'Pequeña cocineta con refrigerador ideal para compartir desayunos',
-        'https://sizearquitectura.es/wp-content/uploads/2019/02/cocina-casa-de-lujo-ibiza.jpg',
-        'Oxxo en la esquina',
-        'https://www.mundodeportivo.com/r/GODO/MD/p6/MasQueDeporte/Imagenes/2019/04/24/Recortada/img_ironda_20190424-161008_imagenes_md_otras_fuentes_cinema-k0uB-U461841974404xGG-980x554@MundoDeportivo-Web.jpg',
-        500
-      )
+  , 900 )
 
     ];
 
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
 
 
 
-  getCuartos(): Cuarto[] {
-    return this.listaCuarto.slice();
+  getCuartos(): Observable<Cuarto[]> {
+    return this.http.get<Cuarto[]>('http://localhost:80/api/cuartos');
+    // return this.listaCuarto.slice();
   }
 
   notificarCambio() {
@@ -106,7 +90,7 @@ addCuarto(cuarto: Cuarto): boolean {
   cuarto.id = this.getNextID();
   this.listaCuarto.push(Object.assign({}, cuarto));
   this.notificarCambio();
-  console.log("SE CREO EL CUARTO");
+  console.log('SE CREO EL CUARTO');
   return true;
 
 }

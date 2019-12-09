@@ -20,8 +20,9 @@ export interface DialogData {
 export class CuartosComponent implements OnInit {
   cuartoModal: Cuarto;
 
+  //public cuartos: Cuarto[] = [];
+  
   public cuartos: Cuarto[] = [];
-
 
   constructor(
     public dialog: MatDialog,
@@ -29,7 +30,7 @@ export class CuartosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.cuartos = this.cuartosService.getCuartos();
+   this.cuartosService.getCuartos().subscribe(data => this.cuartos = data);
   }
 
 

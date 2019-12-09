@@ -2,14 +2,12 @@
 const moment = require('moment');
 const express = require('express');
 const fs = require('fs');
-const app = express();
 const bodyParser = require('body-parser');
-const chalk = require('chalk');
 const cors = require('cors');
 const port = process.env.PORT || 80;
 const jwt = require('jwt-simple');
-
-app.set('jwtTokenSecret', 'PAE')
+const app = express();
+app.set('jwtTokenSewcret', 'PAE')
 var tokens;
 
 let users = JSON.parse(fs.readFileSync('./JSON_Files/users.json'));
@@ -20,14 +18,14 @@ let jsonParser = bodyParser.json();
 
 app.listen(port, () => console.log(`App running on port ${port}!`));
 
-app.use(express.static(__dirname + '/public'));
+app.use('/',express.static(__dirname + '/public'));
 
 
 const log = (req, res, next) => {
     console.log(`${req.method} ${req.url} ${new Date()} ${req.get('content-type')}`);
     next();
 }
-const app = express();
+
 app.use(log);
 app.use(cors());
 
@@ -37,12 +35,12 @@ app.route('/home')
         res.send("Pantalla de Home")
     })
 
-app.route('api/user')
+app.route('/api/user')
     .get((req, res) => {
         res.json(users);
     })
 
-app.route('api/user/:id')
+app.route('/api/user/:id')
     .get((req, res) => {
         let id = req.params.id;
         let u = users.find(p => p.id == id);
@@ -110,7 +108,7 @@ function PatchUsuario(id, user) {
 
 
 
-app.route('api/cuarto')
+app.route('/api/cuartos')
     .get((req, res) => {
         res.json(cuartos)
     })
@@ -133,12 +131,13 @@ app.route('api/cuarto')
         });
     })
 
-app.route('api/cuartos/:id')
+app.route('/api/cuartos/:id')
     .get((req, res) => {
         let id = req.params.id;
-        let c = cuartos.find(p => p.id == id);
-        if (c) {
-            return res.send(c);
+        const pos = cuartos.findIndex(i => id === i.id);
+       
+        if (pos >= 0) {
+            return res.send(cuartos[pos]);
         }
         res.send({
             error: 'ID no existe'
