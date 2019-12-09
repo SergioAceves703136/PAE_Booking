@@ -19,7 +19,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutusComponent } from './aboutus/aboutus.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
