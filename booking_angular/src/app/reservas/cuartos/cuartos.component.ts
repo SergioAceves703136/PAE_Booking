@@ -21,7 +21,7 @@ export class CuartosComponent implements OnInit {
   cuartoModal: Cuarto;
 
   //public cuartos: Cuarto[] = [];
-  
+
   public cuartos: Cuarto[] = [];
 
   constructor(
@@ -35,7 +35,7 @@ export class CuartosComponent implements OnInit {
 
 
   info(id: number): void {
-    this.cuartoModal = this.cuartosService.getCuarto(id);
+    this.cuartosService.getCuarto(id).subscribe(data => this.cuartoModal = data);
     console.log(this.cuartoModal);
     const dialogRef = this.dialog.open(CuartosInfoComponent, {
       width: '650px',
@@ -73,7 +73,7 @@ export class CuartosInfoComponent {
   }
 
   onClickRes(id: number): void {
-    this.cuartoModal = this.cuartosService.getCuarto(id);
+    this.cuartosService.getCuarto(id).subscribe(data => this.cuartoModal = data);
     console.log(this.cuartoModal);
     const dialogRef = this.dialog.open(ReservaCuartoComponent, {
       width: '650px',

@@ -1,8 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, throwError } from 'rxjs';
 import { Cuarto } from '../data-models/cuarto';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    // tslint:disable-next-line: object-literal-key-quotes
+    //'Authorization': 'my-auth-token'
+  })
+};
 
 
 @Injectable({
@@ -13,50 +21,27 @@ export class CuartosService {
   cambiaListaCuartos = new Subject<Cuarto[]>();
   nextID = 4;
 
-  listaCuarto: Cuarto[] =
-    [
-      new Cuarto(1,
-        1,
-        'Avenida Feliz 2016, México',
-        'Villita frente al mar',
-        'Pequeña villa familiar a las afueras de puerto vallarta, ideal para familias con hijos',
-        'https://i.pinimg.com/originals/c3/74/4c/c3744c26d0fec3a211e6dfdd98f6242e.jpg',
-        3,
-        '2 Cuartos completos matrimoniales y uno de visitas',
-        'https://www.freejpg.com.ar/asset/OLD/comps/f003992.jpg',
-        5,
-        '2 Baños completos y 3 baños para visitantes en la parte de abajo, 1 en la playa',
-        'https://tendenzias.com/wp-content/uploads/fotos-de-ba%C3%B1os-de-lujo-600x476.jpg',
-        'Gran cocina con 2 estufas y 3 refrigeradores',
-        'https://sizearquitectura.es/wp-content/uploads/2019/02/cocina-casa-de-lujo-ibiza.jpg',
-        'Cine en casa y billar',
-        'https://www.mundodeportivo.com/r/GODO/MD/p6/MasQueDeporte/Imagenes/2019/04/24/Recortada/img_ironda_20190424-161008_imagenes_md_otras_fuentes_cinema-k0uB-U461841974404xGG-980x554@MundoDeportivo-Web.jpg'
-     , 564 ),
-      new Cuarto(2,
-        1,
-        'Calle cervezeros 564',
-        'Mansion lujosa',
-        'Mansion grande con 9 recamaras con baño y cancha de tenis',
-        'http://www.arquitecturaviva.com/media/Images/visores/febrero_2018/casa_chile_schmidt_4.jpg',
-        9,
-        'Grandes cuartos donde se puede disfrutar y descansar',
-        'https://www.freejpg.com.ar/asset/OLD/comps/f003992.jpg',
-        10,
-        'Baños para cada cuarto y baños de visitantes',
-        'https://tendenzias.com/wp-content/uploads/fotos-de-ba%C3%B1os-de-lujo-600x476.jpg',
-        'Gran cocina para preparar un banquete',
-        'https://sizearquitectura.es/wp-content/uploads/2019/02/cocina-casa-de-lujo-ibiza.jpg',
-        'Jardin y Terraza con asador',
-        'https://www.mundodeportivo.com/r/GODO/MD/p6/MasQueDeporte/Imagenes/2019/04/24/Recortada/img_ironda_20190424-161008_imagenes_md_otras_fuentes_cinema-k0uB-U461841974404xGG-980x554@MundoDeportivo-Web.jpg'
-  , 900 )
-
-    ];
+  listaCuarto: Cuarto[] = [];
 
 
   constructor(private http: HttpClient) { }
 
 
-
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
+    }
+    // return an observable with a user-facing error message
+    return throwError(
+      'Something bad happened; please try again later.');
+  };
 
   getCuartos(): Observable<Cuarto[]> {
     return this.http.get<Cuarto[]>('http://localhost:80/api/cuartos');
@@ -67,9 +52,10 @@ export class CuartosService {
     this.cambiaListaCuartos.next(this.listaCuarto.slice());
   }
 
-  getCuarto(id: number): Cuarto {
-const pos = this.listaCuarto.findIndex (i => i.id === id);
-return Object.assign({}, this.listaCuarto[pos]);
+  getCuarto(id: number): Observable<Cuarto> {
+    return this.http.get<Cuarto>( `http://localhost:80/api/cuartos/${id}`);
+//const pos = this.listaCuarto.findIndex (i => i.id === id);
+//return Object.assign({}, this.listaCuarto[pos]);
   }
 
 borrarCuarto(id: number): boolean {
@@ -86,12 +72,15 @@ getNextID(): number {
   return this.nextID++;
 }
 
-addCuarto(cuarto: Cuarto): boolean {
+addCuarto(cuarto: Cuarto): Observable<Cuarto> {
   cuarto.id = this.getNextID();
-  this.listaCuarto.push(Object.assign({}, cuarto));
-  this.notificarCambio();
-  console.log('SE CREO EL CUARTO');
-  return true;
+  console.log(cuarto);
+  return this.http.post<Cuarto>( `http://localhost:80/api/cuartos`, cuarto, httpOptions);
+  //this.listaCuarto.push(Object.assign({}, cuarto));
+  //this.notificarCambio();
+
+//  console.log('SE CREO EL CUARTO');
+  //return true;
 
 }
 

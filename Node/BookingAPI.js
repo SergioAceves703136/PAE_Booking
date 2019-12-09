@@ -7,6 +7,8 @@ const cors = require('cors');
 const port = process.env.PORT || 80;
 const jwt = require('jwt-simple');
 const app = express();
+
+
 app.set('jwtTokenSewcret', 'PAE')
 var tokens;
 
@@ -17,6 +19,7 @@ let cuartos = JSON.parse(fs.readFileSync('./JSON_Files/cuartos.json'));
 let jsonParser = bodyParser.json();
 
 app.listen(port, () => console.log(`App running on port ${port}!`));
+app.use(cors());
 
 app.use('/',express.static(__dirname + '/public'));
 
@@ -25,9 +28,8 @@ const log = (req, res, next) => {
     console.log(`${req.method} ${req.url} ${new Date()} ${req.get('content-type')}`);
     next();
 }
-
 app.use(log);
-app.use(cors());
+
 
 // Metodos
 app.route('/home')
@@ -53,7 +55,7 @@ app.route('/api/user/:id')
 
 
     })
-    .patch(auth,(req, res) => {
+    .patch(auth,jsonParser,(req, res) => {
         let id = req.params.id;
         if (PatchUsuario(id.req.body)) {
             return res.send(200)
@@ -112,20 +114,18 @@ app.route('/api/cuartos')
     .get((req, res) => {
         res.json(cuartos)
     })
-    .post(auth,(req, res) => {
-        console.log(req.body);
-        if (req.body.id != undefined && req.body.nombre && req.body.descripcion
-            && req.body.owner && req.body.imagen1 && req.body.numBaths && req.body.descCuartos && req.body.numCuartos && req.body.imagenCuartos
-            && req.body.imagenBaths && req.body.direccion && req.body.descBaths && req.body.descCocina && req.body.imagenCocina && req.body.extras
-            & req.body.imagenExtras && req.body.precioDia) {
+    .post(/*auth,*/jsonParser,(req, res) => {
+        console.log('This is the request body', req.body);
+        if (req.body.id != undefined) {
             cuartos.push(req.body);
             fs.writeFileSync('./JSON_Files/cuartos.json', JSON.stringify(cuartos));
-            console.log(cuartos);
+            console.log('SE CREO EL CUARTO');
             res.status(201).send();
             return;
-
+            
 
         }
+        console.log('NO SE LOGRÓ CREAR EL CUARTO')
         res.status(400).send({
             error: 'faltan atributos'
         });
@@ -134,13 +134,14 @@ app.route('/api/cuartos')
 app.route('/api/cuartos/:id')
     .get((req, res) => {
         let id = req.params.id;
-        const pos = cuartos.findIndex(i => id === i.id);
-       
+        const pos = cuartos.findIndex(i => i.id == id);
+       console.log('pos ',pos)
+       console.log('id ',id)
         if (pos >= 0) {
             return res.send(cuartos[pos]);
         }
         res.send({
-            error: 'ID no existe'
+            error: 'ID no existe sorry'
         })
     })
     .patch(auth,(req, res) => {
