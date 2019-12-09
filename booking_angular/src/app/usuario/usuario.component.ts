@@ -178,7 +178,7 @@ export class CrearCuartosComponent {
 
     this.owner = this.singupService.getCurrentPerson();
     this.cuartoModal.owner = this.owner.id;
-    this.cuartoService.addCuarto(this.cuartoModal);
+    this.cuartoService.addCuarto(this.cuartoModal).subscribe();
     console.log(this.cuartoModal);
     console.log('Entro a cerrar');
     this.dialogRef.close();

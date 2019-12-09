@@ -18,6 +18,7 @@ import { TabsComponent } from './nav/tabs/tabs.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   entryComponents: [CuartosInfoComponent, CrearCuartosComponent, ReservaCuartoComponent ],
   providers: [
