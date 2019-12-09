@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ReservasComponent } from './reservas/reservas.component';
-import { CuartosComponent, CuartosInfoComponent } from './reservas/cuartos/cuartos.component';
+import { CuartosComponent, CuartosInfoComponent, ReservaCuartoComponent } from './reservas/cuartos/cuartos.component';
 import { HomeComponent } from './home/home.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioComponent, CrearCuartosComponent } from './usuario/usuario.component';
 import { AuthComponent } from './auth/auth.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
@@ -17,7 +17,11 @@ import { SidenavListComponent } from './nav/sidenav-list/sidenav-list.component'
 import { TabsComponent } from './nav/tabs/tabs.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutusComponent } from './aboutus/aboutus.component';
+<<<<<<< HEAD
 
+=======
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+>>>>>>> 399b0915f22c6bbb551e5b2b5ea9cfcd7fe0dba1
 
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     SidenavListComponent,
     TabsComponent,
     AboutusComponent,
-    CuartosInfoComponent
+    CuartosInfoComponent,
+    CrearCuartosComponent,
+    ReservaCuartoComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  entryComponents: [CuartosInfoComponent ],
+  entryComponents: [CuartosInfoComponent, CrearCuartosComponent, ReservaCuartoComponent ],
   providers: [
     FormsModule
   ],

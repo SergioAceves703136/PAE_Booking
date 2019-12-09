@@ -19,7 +19,7 @@ export class CuartosService {
         'Avenida Feliz 2016, México',
         'Villita frente al mar',
         'Pequeña villa familiar a las afueras de puerto vallarta, ideal para familias con hijos',
-        'http://www.arquitecturaviva.com/media/Images/visores/febrero_2018/casa_chile_schmidt_4.jpg',
+        'https://i.pinimg.com/originals/c3/74/4c/c3744c26d0fec3a211e6dfdd98f6242e.jpg',
         3,
         '2 Cuartos completos matrimoniales y uno de visitas',
         'https://www.freejpg.com.ar/asset/OLD/comps/f003992.jpg',
@@ -53,7 +53,7 @@ export class CuartosService {
         'Glorieta Colon, Guadalajara, 56410',
         'Departamento con vista a catedral',
         'Departamento cerca de punto sao paulo en guadalajara con vista al centro de la ciudad',
-        'http://www.arquitecturaviva.com/media/Images/visores/febrero_2018/casa_chile_schmidt_4.jpg',
+        'https://guias-viajar.com/wp-content/uploads/2014/04/mejores-fotos-valencia004.jpg',
         2,
         '2 Cuartos con balcon y camas individuales',
         'https://www.freejpg.com.ar/asset/OLD/comps/f003992.jpg',
@@ -106,6 +106,7 @@ addCuarto(cuarto: Cuarto): boolean {
   cuarto.id = this.getNextID();
   this.listaCuarto.push(Object.assign({}, cuarto));
   this.notificarCambio();
+  console.log("SE CREO EL CUARTO");
   return true;
 
 }
@@ -119,6 +120,29 @@ if (pos >= 0 ) {
 }
 return false;
 }
+
+RoomService(): Cuarto {
+  const cuartoR: Cuarto = {
+    id: 0,
+    owner: 0,
+   direccion: '',
+    nombre: '',
+         descripcion: '',
+         imagen1: '',
+         numCuartos: 0,
+         descCuartos: '',
+         imagenCuartos: '',
+         numBaths: 0,
+         descBaths: '',
+         imagenBaths: '',
+         descCocina: '',
+         imagenCocina: '',
+         extras: '',
+         imagenExtras: '',
+         precioDia: 0
+  };
+  return cuartoR;
+  }
 
 
 }
