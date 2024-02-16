@@ -7,10 +7,14 @@ import {
     MatSidenavModule,
     MatTabsModule,
     MatGridListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatPaginatorModule,
+    MatCardModule,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule
 
 } from '@angular/material';
-
 
 @NgModule ({
     imports:
@@ -22,7 +26,12 @@ import {
         MatListModule,
         MatTabsModule,
         MatGridListModule,
-        MatDividerModule
+        MatDividerModule,
+        MatPaginatorModule,
+        MatCardModule,
+        MatDialogModule,
+        MatInputModule,
+        MatFormFieldModule
     ],
     exports: [
         MatButtonModule,
@@ -32,7 +41,12 @@ import {
         MatListModule,
         MatTabsModule,
         MatGridListModule,
-        MatDividerModule
+        MatDividerModule,
+        MatPaginatorModule,
+        MatCardModule,
+        MatDialogModule,
+        MatInputModule,
+        MatFormFieldModule
     ]
 
 })

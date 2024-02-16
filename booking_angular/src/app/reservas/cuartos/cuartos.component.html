@@ -1,1 +1,36 @@
-<p>cuartos works!</p>
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[2, 4, 8, 16]" (page)="pageEvent = $event">
+</mat-paginator>
+<mat-grid-list cols=3 rowHeight="500px" >
+    <mat-grid-tile *ngFor="let item of cuartos">
+        <div>
+            <mat-card style="  max-height: 381px; overflow: hidden;" class="">
+                <mat-card-header>
+                    <mat-card-title>{{item.nombre}}</mat-card-title>
+                    <mat-card-subtitle>${{item.precioDia}} por noche</mat-card-subtitle>
+                </mat-card-header>
+                <img height="250" width="auto" mat-card-image src={{item.imagen1}} (click)="info(item.id)" alt="Imagen No Disponible">
+                <mat-card-content>
+                    <p style="font-size: 15px;" class="text">
+                        {{item.descripcion}}
+                    </p>
+                </mat-card-content>
+               <!--------  <mat-card-actions>
+                    <button mat-button style="width: 100%" (click)="info(item.id)">Info</button>
+                   
+                    <button  mat-button>Edit</button>
+                  
+                </mat-card-actions>  ------>
+            </mat-card>
+
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+
+<!--INFO DEL MODAL  -----------------
+<ng-template #modalInfo>
+   
+    
+
+</ng-template>----->

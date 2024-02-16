@@ -1,0 +1,55 @@
+
+<!-------------->
+<div style="background-color: beige;">
+<div mat-dialog-title style="background-color: beige; height: 50%;">
+    <h5 style="font-size: large; text-align: center;">Información de {{data.cuartoModal.nombre}}</h5>
+</div>
+<div mat-dialog-content style="background-color: beige;">
+    <div class="container-fluid">
+        <p>Esta es la descripcion del servicio <br>
+            {{data.cuartoModal.descripcion}}
+        </p>
+        <img  height="400" width="600" src={{data.cuartoModal.imagen1}} alt="Imagen No Disponible">
+
+        <div id="recamaras">
+            <h3>Recamaras</h3>
+            <h4 id="numRecamaras">Numero de Cuartos: {{data.cuartoModal.numCuartos}}</h4>
+            <p>Descripcion de los cuartos<br>
+                {{data.cuartoModal.descCuartos}}
+            </p>
+            <img height="400" width="600" src={{data.cuartoModal.imagenCuartos}} alt="Imagen de los cuartos no disponible">
+
+        </div>
+        <div id="bano">
+            <h3>Baño</h3>
+            <h4 id="numBaño">Numero de Baños: {{data.cuartoModal.numBaths}}</h4>
+            <p>Descripcion de los Baños<br>
+                {{data.cuartoModal.descBaths}}
+            </p>
+            <img height="400" width="600" src={{data.cuartoModal.imagenBaths}} alt="Imagen de los baños no disponible">
+
+        </div>
+        <div id="cocina">
+            <h3>Cocina</h3>
+            <p>Descripcion de la cocina<br>
+                {{data.cuartoModal.descCocina}}
+            </p>
+            <img height="400" width="600" src={{data.cuartoModal.imagenCocina}} alt="Imagen Cocina no disponible">
+
+        </div>
+        <div id="extras">
+            <h3>Otros Detalles</h3>
+            <p>{{data.cuartoModal.extras}}</p>
+            <img height="400" width="600" src={{data.cuartoModal.imagenExtras}} alt="Imagen no disponible">
+        </div>
+
+    </div>
+
+
+</div>
+
+<div style="text-align: end;" mat-dialog-actions style="background-color: beige;">
+    <button  mat-button (click)=onNoClick()>Ok</button>
+    <button *ngIf="this.singupService.isLoggedIn()"  mat-button (click)=onClickRes(data.cuartoModal.id)>Reservar</button>
+</div>
+</div>

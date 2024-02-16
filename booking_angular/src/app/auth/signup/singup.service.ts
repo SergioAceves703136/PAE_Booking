@@ -1,45 +1,35 @@
 import { Injectable } from '@angular/core';
 import { Person } from '../../data-models/person';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
-let incrementID = 0;
-let currentSession = 0; // usuario actual
+
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class SingupService {
-  cambiaDato = new Subject<Person[]>();
 
-  persons: Array<Person> = [
-  /*  new Person(incrementID, 'Usuario test', 'test@booking.com', 'Superusuario',
-    '12345', 'Elm Street 666', 'New Orleans', 'EEUU',
-    1111, 13579, '01-01-2000', 0)*/
+  incrementID = 1;
+  currentSession: Person;
+
+  cambiaDato = new Subject<Person[]>();
+  persons: Person[] = [
+     new Person(1, 'admin', 'test@booking.com', 'admin',
+      'admin', 'Elm Street 666', 'New Orleans', 'EEUU',
+      1111, 13579, '01-01-2000', 1, [], [])
   ];
 
-  constructor() { }
+
+  constructor(private router: Router) { }
 
   actualizarPersonas() {
     this.cambiaDato.next(this.getPersons());
   }
-/*
-  generateAdmin() {
-    if (incrementID === 0) {
-      console.log('Test');
-     /*
-      const aux = {incrementID, 'Usuario test', 'test@booking.com', 'Superusuario',
-      '12345', 'Elm Street 666', 'New Orleans', 'EEUU',
-      1111, 13579, '01-01-2000', 0};
-
-      this.persons.push(aux);
-      console.log(aux);
-    }
-  }
-*/
   generateID(): number {
-    incrementID++;
-    return incrementID;
+    this.incrementID++;
+    return this.incrementID;
   }
 
   createPerson(objct) {
@@ -48,30 +38,41 @@ export class SingupService {
     console.log(objct);
     this.savePerson(objct);
     this.persons.push(objct);
+    this.router.navigate(['/signin']);
   }
 
   savePerson(objct) {
-    console.log('Se esta guadando el obj con id', objct, objct.id);
-    //this.logUser(objct.id);
+    console.log('Se esta guadando el obj con id', objct.id);
+    // this.logUser(objct.id);
   }
 
-// Invocar logUser DESPUÉS del la comprobación de screenname y contraseña al presionar login, no al crear cuenta.
-  logUser(id: number) {
-    console.log('Iniciando sesión como persona ', id);
-    currentSession = id;
+  // Invocar logUser DESPUÉS del la comprobación de screenname y contraseña al presionar login, no al crear cuenta.
+  logUser(objct) {
+    console.log(objct);
+    const pos = this.persons.findIndex(i => i.screenName === objct.screenName);
+    if (pos >= 0 && this.persons[pos].password === objct.password) {
+      console.log('entro');
+      this.currentSession = this.persons[pos];
+      this.router.navigate(['/usuario']);
+      return;
+    }
+    console.log('Error');
+  }
+
+  logOut() {
+    this.currentSession = undefined;
   }
 
   isLoggedIn(): boolean {
-    if (currentSession) {
+    if (this.currentSession) {
       return true;
     }
     return false;
   }
 
   getCurrentPerson(): Person {
-    console.log('Current user logged: ', currentSession);
-    console.log(this.getPerson(currentSession));
-    return this.getPerson(currentSession);
+    console.log('Current user logged: ', this.currentSession.id);
+    return this.currentSession;
   }
 
   getPerson(id: number): Person {
@@ -82,9 +83,26 @@ export class SingupService {
     console.log(this.persons);
     return this.persons.slice();
   }
-/*
-  getLastId(): number {
-    return incrementID;
+
+  notificarCambio() {
+    this.cambiaDato.next(this.persons.slice());
   }
-*/
+
+  addReservation(idPer: number, idCuarto: number): boolean {
+    const pos = this.persons.findIndex(i => i.id === idPer);
+    if (pos >= 0) {
+      this.persons[pos].transacciones.push(idCuarto);
+      this.notificarCambio();
+      console.log('Reservación aceptada');
+      return true;
+    }
+
+    return false;
+
+  }
+  /*
+    getLastId(): number {
+      return incrementID;
+    }
+  */
 }
